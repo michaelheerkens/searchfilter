@@ -5,7 +5,7 @@ const searchClient = algoliasearch(
 );
 
 const search = instantsearch({
-  indexName: 'contacts',
+  indexName: 'greetz-test-index',
   searchClient,
   routing: true,
 });
