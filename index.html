@@ -1,28 +1,46 @@
-<!doctype html>
-<head>
-  <meta charset="UTF-8">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/instantsearch.css@7.4.5/themes/satellite-min.css" integrity="sha256-TehzF/2QvNKhGQrrNpoOb2Ck4iGZ1J/DI4pkd2oUsBc=" crossorigin="anonymous">
-</head>
-<body>
-  <header>
-    <div id="search-box"></div>
-  </header>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="theme-color" content="#000000" />
 
-  <main>
-      <div id="hits"></div>
-      <div id="pagination"></div>
-  </main>
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="shortcut icon" href="./favicon.png" />
 
-  <script type="text/html" id="hit-template">
-    <div class="hit">
-      <p class="hit-name">
-        {{#helpers.highlight}}{ "attribute": "name" }{{/helpers.highlight}}
-        {{#helpers.highlight}}{ "attribute": "description" }{{/helpers.highlight}}
-      </p>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/instantsearch.css@7/themes/algolia-min.css"
+    />
+    <link rel="stylesheet" href="./src/index.css" />
+    <link rel="stylesheet" href="./src/app.css" />
+
+    <title>ais-ecommerce-demo-app</title>
+  </head>
+
+  <body>
+    <div class="ais-InstantSearch">
+      <h1>InstantSearch.js e-commerce demo</h1>
+
+      <div class="left-panel">
+        <div id="clear-refinements"></div>
+
+        <h2>Brands</h2>
+        <div id="brand-list"></div>
+      </div>
+
+      <div class="right-panel">
+        <div id="searchbox" class="ais-SearchBox"></div>
+        <div id="hits"></div>
+        <div id="pagination"></div>
+      </div>
     </div>
-  </script>
 
-  <script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.5.1/dist/algoliasearch-lite.umd.js" integrity="sha256-EXPXz4W6pQgfYY3yTpnDa3OH8/EPn16ciVsPQ/ypsjk=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/instantsearch.js@4.8.3/dist/instantsearch.production.min.js" integrity="sha256-LAGhRRdtVoD6RLo2qDQsU2mp+XVSciKRC8XPOBWmofM=" crossorigin="anonymous"></script>
-  <script src="app.js"></script>
-</body>
+    <script src="https://cdn.jsdelivr.net/npm/algoliasearch@4/dist/algoliasearch-lite.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/instantsearch.js@4"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
