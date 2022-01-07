@@ -6,7 +6,7 @@ const searchClient = algoliasearch(
 );
 
 const search = instantsearch({
-  indexName: 'greetz-test-index',
+  indexName: 'presta_ie',
   searchClient,
 });
 
@@ -18,10 +18,16 @@ search.addWidgets([
     container: '#hits',
     templates: {
       item: `
-<article>
-  <h1>{{#helpers.highlight}}{ "attribute": "name" }{{/helpers.highlight}}</h1>
-</article>
-`,
+        <div>
+          <img width="100" src="{{search_image}}" align="left" alt="{{name}}" />
+          <div class="hit-name">
+            {{#helpers.highlight}}{ "attribute": "name" }{{/helpers.highlight}}
+          </div>
+          <div class="hit-description">
+          </div>
+          <div class="hit-price">\{{price}}</div>
+        </div>
+      `,
     },
   }),
   instantsearch.widgets.configure({
